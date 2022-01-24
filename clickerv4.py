@@ -45,25 +45,16 @@ def doubleclick(e):
     counter.config(text= clicks)
 
 button_up = tk.Button(gui,text='up', font=('arial',20,'bold'),command=up)
-button_up.config(
-    padx=30
-)
 button_up.pack()
-pady=30
 
 counter = tk.Label(
     gui,
     text=clicks
 )
-
 counter.pack()
 
 button_down = tk.Button(gui,text='down', font=('arial',20,'bold'),command=down)
-button_down.config(
-    padx=30
-)
 button_down.pack()
-pady=30
 
 button_up.bind("<Enter>", on_enter)
 button_up.bind("<Leave>", on_leave)
