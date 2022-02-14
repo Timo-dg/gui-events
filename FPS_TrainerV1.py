@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 from tkinter.messagebox import askyesno
 import sys
 import os
@@ -9,6 +10,7 @@ gui.title('FPS trainer')
 gui.geometry("{0}x{1}+0+0".format(gui.winfo_screenwidth(), gui.winfo_screenheight()))
 gui.config(bg="grey")
 label = tk.Label(gui)
+textbox = ttk.Entry(gui)
 
 timer = 20
 points = 0
@@ -54,7 +56,8 @@ fg='white',bg='black')
 points_Label.place(x='1110')
 
 def addPoints(e):
-    global points
+    global points,var1
+    gui.unbind(buttonBinds[var1],funcid=None)
     var1 = random.randint(0,7)
     points += 1
     points_Label.config(text="Points: "+str(points))
